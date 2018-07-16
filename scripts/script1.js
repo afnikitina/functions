@@ -1,4 +1,5 @@
 // calculate the volume of a trapezoidal prism
+// function returns the calculated volume or -1 if some/all of the arguments are not numeric
 function calcVolumeOfTrapPrism(prBase1, prBase2, prHeight, prLength) {
 	// in case a user entered negative numbers, convert them to positive numbers
 	if (!isNaN(prBase1) && !isNaN(prBase2) && !isNaN(prHeight) && !isNaN(prLength)) {
@@ -16,7 +17,7 @@ function calcVolumeOfTrapPrism(prBase1, prBase2, prHeight, prLength) {
 // write a string backwards
 function writeStringBackwards(str) {
 	if (typeof str !== "string") {
-		console.error("argument must be a string");
+		console.error("argument is expected to be a string");
 		return "";
 	}
 	let strLength = str.length;
@@ -29,7 +30,7 @@ function writeStringBackwards(str) {
 
 // test writeStringBackwards()
 //console.log(writeStringBackwards("ajsdjfkslajlfaksjfldsl"));
-console.log(writeStringBackwards(123456789));
+//console.log(writeStringBackwards(123456789));
 
 // multiply all occurrences of numbers in the array (first argument) by the second argument
 // function returns a modified array (if it contained numbers or values that can be converted to numbers)
