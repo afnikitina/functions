@@ -17,6 +17,7 @@
 // write a string backwards
 function writeStringBackwards($str) {
 		$resultStr = "";
+	// check if argument is a string
 		if (is_string($str)) {
 			$strLength = strlen($str);
 			for ($i = $strLength-1; $i >=0; $i--){
@@ -32,9 +33,11 @@ function writeStringBackwards($str) {
 //echo writeStringBackwards("ajsdkjfksdajkf");
 //echo writeStringBackwards(123456789);
 
-// multiply all occurrences of numbers in the array (first argument) by the second argument
+// multiply all occurrences of numbers in the array (first argument) by the second argument (a number)
 // function returns a modified array (if it contained numbers or values that can be converted to numbers)
+// or an empty array if the first argument wasn't a valid array
 function multiplyAllNumbersInArray($arr, $num) {
+		// test if both arguments are valid
 		if (is_array($arr) && is_numeric($num)) {
 			$arrLength = count($arr);
 			for ($i = 0; $i < $arrLength; $i++) {
@@ -43,7 +46,7 @@ function multiplyAllNumbersInArray($arr, $num) {
 				}
 			}
 		} else {
-			echo "invalid arguments: first argument must be an array, second argument must be number";
+			echo "invalid arguments: first argument must be an array, second argument must be a number";
 			$arr = [];
 		}
 	return $arr;
