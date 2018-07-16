@@ -3,9 +3,8 @@
 function calcVolumeOfTrapPrism(prBase1, prBase2, prHeight, prLength) {
 	// check if all arguments are numeric
 	if (!isNaN(prBase1) && !isNaN(prBase2) && !isNaN(prHeight) && !isNaN(prLength)) {
-		// in case a user entered negative numbers, convert them to positive numbers
-		let volume = (Math.abs(prBase1) + Math.abs(prBase2)) /2 * Math.abs(prHeight) * Math.abs(prLength);
-		return (volume );
+		// use absolute values in case a user accidently entered negative numbers
+		return ((Math.abs(prBase1) + Math.abs(prBase2)) /2 * Math.abs(prHeight) * Math.abs(prLength));
 	} else {
 		console.error("all arguments of calcVolumeOfTrapPrism() must be numeric");
 		return -1;
@@ -14,11 +13,13 @@ function calcVolumeOfTrapPrism(prBase1, prBase2, prHeight, prLength) {
 
 // test calcVolumeOfTrapPrism()
 //console.log(calcVolumeOfTrapPrism(2,4,3,5));
+//console.log(calcVolumeOfTrapPrism(-4,12,"foo",'s'));
 
 // write a string backwards
+// function returns a string written backwards or an empty string (if an erroneous argument was passed)
 function writeStringBackwards(str) {
 	let resultStr = "";
-	// check if argument is a string
+	// check if argument is not a string
 	if (typeof str !== "string") {
 		console.error("argument is expected to be a string");
 	} else {
@@ -37,7 +38,7 @@ function writeStringBackwards(str) {
 // multiply all occurrences of numbers in the array (first argument) by the second argument (a number)
 // function returns a modified array (if it contained numbers or values that can be converted to numbers)
 // or an empty array if the first argument wasn't a valid array
-function multiplyAllNumbersInArray(arr, num) {
+function multiplyAllNumbersInArrayByNum(arr, num) {
 	// test if both arguments are valid
 	if (Array.isArray(arr) && !isNaN(num)) {
 		let arrLength = arr.length;
@@ -53,12 +54,12 @@ function multiplyAllNumbersInArray(arr, num) {
 	return arr;
 }
 
-// test multiplyAllNumbersInArray();
+// test multiplyAllNumbersInArrayByNum();
 /*
 let array = [1,2,3,4,5,"foo"];
-console.log(multiplyAllNumbersInArray(array, -6));
+console.log(multiplyAllNumbersInArrayByNum(array, -6));
 let newArr = ['1', '2', "dom", {}];
-console.log(multiplyAllNumbersInArray(newArr, "foo"));
+console.log(multiplyAllNumbersInArrayByNum(newArr, "foo"));
 let arr3 = {color: "red", shape: "rectangle"};
-console.log(multiplyAllNumbersInArray(arr3, 9));
+console.log(multiplyAllNumbersInArrayByNum(arr3, 9));
 */

@@ -4,6 +4,7 @@
 	function calcVolumeOfTrapPrism($prBase1, $prBase2, $prHeight, $prLength) {
 		// check if all arguments are numeric
 		if (is_numeric($prBase1) && is_numeric($prBase2) && is_numeric($prHeight) && is_numeric($prLength)) {
+			// use absolute values in case a user accidently entered negative numbers
 			$volume = (abs($prBase1) + abs($prBase2)) /2 * abs($prHeight) * abs($prLength);
 		} else {
 			echo "Not all arguments are numeric";
@@ -17,7 +18,7 @@
 // write a string backwards
 function writeStringBackwards($str) {
 		$resultStr = "";
-	// check if argument is a string
+	// check if argument is not a string
 		if (is_string($str)) {
 			$strLength = strlen($str);
 			for ($i = $strLength-1; $i >=0; $i--){
@@ -36,7 +37,7 @@ function writeStringBackwards($str) {
 // multiply all occurrences of numbers in the array (first argument) by the second argument (a number)
 // function returns a modified array (if it contained numbers or values that can be converted to numbers)
 // or an empty array if the first argument wasn't a valid array
-function multiplyAllNumbersInArray($arr, $num) {
+function multiplyAllNumbersInArrayByNum($arr, $num) {
 		// test if both arguments are valid
 		if (is_array($arr) && is_numeric($num)) {
 			$arrLength = count($arr);
@@ -52,10 +53,10 @@ function multiplyAllNumbersInArray($arr, $num) {
 	return $arr;
 }
 
-// test multiplyAllNumbersInArray();
+// test multiplyAllNumbersInArrayByNum();
 /*
 $array = [1,2,3,4,5,"foo"];
-$newArr = multiplyAllNumbersInArray($array, 5);
+$newArr = multiplyAllNumbersInArrayByNum($array, 5);
 foreach ($newArr as $value) {
 	echo $value;
 }
