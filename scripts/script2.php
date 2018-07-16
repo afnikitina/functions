@@ -46,7 +46,7 @@ function multiplyAllNumbersInArray($arr, $num) {
 				}
 			}
 		} else {
-			echo "invalid arguments: first argument must be an array, second argument must be a number";
+			echo "invalid argument(s): first argument must be an array, second argument must be a number";
 			$arr = [];
 		}
 	return $arr;

@@ -47,7 +47,7 @@ function multiplyAllNumbersInArray(arr, num) {
 			}
 		}
 	} else {
-		console.error("invalid arguments: first argument must be an array, second argument must be a number");
+		console.error("invalid argument(s): first argument must be an array, second argument must be a number");
 		arr = [];
 	}
 	return arr;
