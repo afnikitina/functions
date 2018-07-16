@@ -16,6 +16,7 @@
 	//echo calcVolumeOfTrapPrism(2,4,3,5);
 
 // write a string backwards
+// function returns a string written backwards or an empty string (if an erroneous argument was passed to the function)
 function writeStringBackwards($str) {
 		$resultStr = "";
 	// check if argument is not a string
@@ -36,7 +37,7 @@ function writeStringBackwards($str) {
 
 // multiply all occurrences of numbers in the array (first argument) by the second argument (a number)
 // function returns a modified array (if it contained numbers or values that can be converted to numbers)
-// or an empty array if the first argument wasn't a valid array
+// or an empty array if the first argument wasn't a valid array or the seoond argument is not a number
 function multiplyAllNumbersInArrayByNum($arr, $num) {
 		// test if both arguments are valid
 		if (is_array($arr) && is_numeric($num)) {
